@@ -2,7 +2,7 @@ import BannerPurchase from '@/components/product/BannerPurchase'
 import InformationsProduct from '@/components/product/InformationsProduct'
 import ProductNotFound from '@/components/product/ProductNotFound'
 import TitleProduct from '@/components/product/TitleProduct'
-import { products } from '@/core'
+import { products } from '@gstore/core'
 
 export default function PageProduct(props: any) {
     const id = +props.params.id

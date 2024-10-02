@@ -1,0 +1,7 @@
+GET http://localhost:3005/products
+
+###
+GET http://localhost:3005/products/8
+
+###
+DELETE http://localhost:3005/products/9

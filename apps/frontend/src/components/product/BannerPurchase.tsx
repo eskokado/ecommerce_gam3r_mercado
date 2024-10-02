@@ -1,6 +1,6 @@
 'use client'
 import { IconCreditCard, IconShoppingCart } from '@tabler/icons-react'
-import { Money, Product } from '@/core'
+import { Money, Product } from '@gstore/core'
 // import useCarrinho from '@/data/hooks/useCarrinho'
 import useInstallment from '@/data/hooks/useInstallment'
 import { useRouter } from 'next/navigation'
