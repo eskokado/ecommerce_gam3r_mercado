@@ -4,6 +4,8 @@ import { IconShoppingCartPlus } from '@tabler/icons-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import NotaReview from '../shared/NotaReview'
+import useCar from '@/data/hooks/useCar'
+import useInstallment from '@/data/hooks/useInstallment'
 
 export interface ProductItemProps {
     product: Product
@@ -11,6 +13,8 @@ export interface ProductItemProps {
 
 export default function ProductItem(props: ProductItemProps) {
     const { product } = props
+    const { addItem } = useCar()
+    const installment = useInstallment(props.product.promotionalPrice)
     return (
         <Link
             href={`/product/${props.product.id}`}
@@ -40,10 +44,10 @@ export default function ProductItem(props: ProductItemProps) {
                     <span className="text-xl font-semibold text-emerald-400">
                         por {Money.formater(product.promotionalPrice)}
                     </span>
-                    {/* <span className="text-zinc-400 text-xs">
-                        até {parcelamento.qtdeParcelas}x de{' '}
-                        {Moeda.formatar(parcelamento.valorParcela)}
-                    </span> */}
+                    <span className="text-zinc-400 text-xs">
+                        até {installment.numberOfInstallments}x de{' '}
+                        {Money.formater(installment.valueInstallment)}
+                    </span>
                 </div>
                 <button
                     className="
@@ -53,7 +57,7 @@ export default function ProductItem(props: ProductItemProps) {
                     onClick={(e) => {
                         e.preventDefault()
                         console.log('Adicionar ao carrinho')
-                        // adicionarItem(props.produto)
+                        addItem(props.product)
                     }}
                 >
                     <IconShoppingCartPlus size={20} />

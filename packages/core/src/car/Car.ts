@@ -41,7 +41,7 @@ export default class Car {
             .reduce((a, b) => a + b, 0)
     }
 
-    get valueTotalBase() {
+    get valueTotalFull() {
         return this.items
             .map((item) => item.product.basePrice * item.quantity)
             .reduce((a, b) => a + b, 0)

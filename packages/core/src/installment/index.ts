@@ -1,5 +1,5 @@
 import CalculateInstallment from './CalculateInstallment'
-import Parcelamento from './Installment'
+import Installment from './Installment'
 
 export { CalculateInstallment }
-export type { Parcelamento }
+export type { Installment }

@@ -1,7 +1,10 @@
 import BannerPurchase from '@/components/product/BannerPurchase'
+import ExpertReview from '@/components/product/ExpertReview'
 import InformationsProduct from '@/components/product/InformationsProduct'
+import PriceMeter from '@/components/product/PriceMeter'
 import ProductNotFound from '@/components/product/ProductNotFound'
 import TitleProduct from '@/components/product/TitleProduct'
+import UserReviews from '@/components/product/UserReviews'
 import { products } from '@gstore/core'
 
 export default function PageProduct(props: any) {
@@ -14,7 +17,10 @@ export default function PageProduct(props: any) {
                 <TitleProduct product={product} />
                 <InformationsProduct product={product} />
                 <BannerPurchase product={product} />
+                <PriceMeter product={product} />
             </div>
+            <UserReviews product={product} />
+            <ExpertReview product={product}/>
         </div>
     ) : (
         <ProductNotFound />
